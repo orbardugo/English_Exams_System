@@ -19,7 +19,7 @@ class Teacher(object):
             else:
                 print("Please insert one of the following options(1,2,3)")
             q_type = input("Chose question type or finish:\n1.Dictation\n2.Completion of sentence\n3.finish\n")
-        with codecs.open(self.exam_name+'.json', 'wb', encoding='utf-8') as exam_file:
+        with codecs.open('./exams/'+self.exam_name+'.json', 'wb', encoding='utf-8') as exam_file:
             json.dump(self.data, exam_file, ensure_ascii=False)
 
     def create_dictation_q(self):
@@ -34,5 +34,5 @@ class Teacher(object):
         a2 = input("Insert false option:")
         a3 = input("Insert second false option:")
         a4 = input("Insert third false option:")
-        self.data['questions'].append({'type': 2, 'q': q, 'a1': a1, 'a2': a2, 'a3': a3, 'a4': a4})
+        self.data['questions'].append({'type': 2, 'q': q, 'a': [a1, a2, a3, a4]})
 
