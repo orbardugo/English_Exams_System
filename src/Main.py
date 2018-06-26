@@ -28,7 +28,7 @@ if __name__ == '__main__':
         choice = None
         while choice is None:
             try:
-                choice = input("please choose one of the option:\n1. Create new Exam.\n2.Create exam report\n")
+                choice = input("please choose one of the option:\n1. Create new Exam.\n2. Create exam report.\n")
                 choice = int(choice)
             except ValueError:
                 print("please enter the number of your choice from the range 1-2")
@@ -41,10 +41,15 @@ if __name__ == '__main__':
             teacher.create_new_test()
         elif choice == 2:
             print("please Enter the name of the test you want to create a report:\nExam list: ")
+            files_list = []
             for root, dirs, files in os.walk("./Exams"):
                 for i, filename in enumerate(files):
                     print("{}.\t{}".format(i + 1, filename[:-5]))
+                    files_list.append(filename[:-5])
             exam_name = input()
+            while exam_name not in files_list:
+                print("There is no such test in the system, please try again")
+                exam_name = input()
             teacher = Teacher(teacher_name, exam_name)
             teacher.create_exam_report(exam_name)
 

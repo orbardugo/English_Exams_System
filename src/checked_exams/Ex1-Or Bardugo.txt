@@ -1,0 +1,6 @@
+26/06/2018 12:22:45
+Student name:   Or Bardugo
+Student ID: 302891551
+question: 'כלב', Your answer: dog, Correct answer: dog  √
+question: 'I _____ to scholl yesterday', Your answer: went, Correct answer: went  √
+Your final grade:   100

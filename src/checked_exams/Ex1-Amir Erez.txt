@@ -1,0 +1,6 @@
+26/06/2018 12:21:49
+Student name:   Amir Erez
+Student ID: 12345678
+question: 'כלב', Your answer: do, Correct answer: dog  X
+question: 'I _____ to scholl yesterday', Your answer: went, Correct answer: went  √
+Your final grade:   50

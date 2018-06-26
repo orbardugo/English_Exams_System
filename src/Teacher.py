@@ -1,6 +1,10 @@
 import codecs
+import glob
 import json
+
+import re
 import xlwt
+from pandas import DataFrame
 
 
 class Teacher(object):
@@ -44,11 +48,25 @@ class Teacher(object):
         self.exam_data['questions'].append({'type': 2, 'q': q, 'a': [a1, a2, a3, a4]})
         self.train_data['questions'].append({'type': 2, 'q': q, 'a': [a1, a2, a3, a4]})
 
-    def create_exam_report(self,exam_name):
-        workbook = xlwt.Workbook()
-        worksheet = workbook.add_sheet('Statistics')
-        for x in range(0, 10):
-            for y in range(0, 10):
-                worksheet.write(x, y, x * y)
+    def create_exam_report(self, exam_name):
+        files_list = glob.glob("./checked_exams/"+exam_name+'*')
+        student_names = []
+        student_IDs = []
+        student_grades = []
+        for file in files_list:
+            with open(file, "r") as f:
+                for i, line in enumerate(f):
+                    if i == 1:
+                        student_names.append(fix_string(line))
+                    if i == 2:
+                        student_IDs.append(fix_string(line))
+                student_grades.append(fix_string(line))
+        df = DataFrame({'Student Name': student_names, 'ID': student_IDs, 'Grade': student_grades})
+        df = df[['Student Name', 'ID', 'Grade']]
+        df.to_excel("./Reportes/"+exam_name+'.xls', sheet_name=exam_name+' grades', index=False)
 
-        workbook.save("./checked_exams/"+exam_name+'.xls')
+def fix_string(line):
+    tmp = line.split(':')
+    tmp[-1] = tmp[-1].replace('\n', "")
+    tmp[-1] = " ".join(tmp[-1].split())
+    return tmp[-1]
