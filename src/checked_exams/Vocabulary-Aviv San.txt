@@ -1,0 +1,11 @@
+26/06/2018 15:15:57
+Student name:   Aviv San
+Student ID: 12345678
+question: 'דף', Your answer: sheet, Correct answer: sheet  √
+question: 'אוכל', Your answer: food, Correct answer: food  √
+question: 'בצל', Your answer: onion, Correct answer: onion  √
+question: 'מלפפון', Your answer: cucumber, Correct answer: cucumber  √
+question: 'חסה', Your answer: luttuce, Correct answer: lettuce  X
+question: 'חמוצים', Your answer: pickles, Correct answer: pickles  √
+question: 'גשר', Your answer: bridge, Correct answer: bridge  √
+Your final grade:   85

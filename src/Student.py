@@ -11,13 +11,14 @@ class Student(object):
         self.correct_ans_counter = 0
 
     def train(self):
+        """ train function will gives you all types of questions, when you answer you will receive if your answer correct or not   """
         print("Welcome to train mode, here you'll get feedback after each question..\nLets begin!(type exit in any time to stop training)\n")
         train_file = open_file("train_data", "train")
         suffle_q = train_file['questions']
         random.shuffle(suffle_q)
         for question in suffle_q:
             q_type = question['type']
-            if q_type == 1:
+            if q_type == 1: #Completion of sentence
                 print("Write the following word in english:")
                 ans = input(question['q'] + "\nIn english: ")
                 if ans == "exit":
@@ -49,7 +50,7 @@ class Student(object):
 
 
     def exam(self):
-        correct_ans_counter = 0
+        """ exam function, you need to choose exam, when you finish the exam you will get report with your grade"""
         print("Choose exam from the list and enter his name:")
         for root, dirs, files in os.walk("./Exams"):
             for i, filename in enumerate(files):
@@ -92,8 +93,11 @@ class Student(object):
                 self.check_and_write_ans(question['q'], ans_option_list[ans-1], question['a'][0], res_file)
         res_file.write("Your final grade:   "+ str(int((100/len(exam['questions']))*self.correct_ans_counter)))
         res_file.close()
+        file = "cd ./checked_exams & notepad.exe "+choose+"-"+self.name+".txt"
+        os.system(file)
 
     def check_and_write_ans(self, question, student_ans, correct_ans, res_file):
+        """ The function checking the answer and build the outpot file """
         if student_ans != correct_ans:
             res_file.write(
                 "question: '{}', Your answer: {}, Correct answer: {}  X\n".format(question, student_ans, correct_ans))

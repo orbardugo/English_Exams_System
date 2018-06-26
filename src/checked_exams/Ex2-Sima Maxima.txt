@@ -1,0 +1,5 @@
+26/06/2018 15:18:46
+Student name:   Sima Maxima
+Student ID: 2567633797
+question: 'אריה', Your answer: lion, Correct answer: lion  √
+Your final grade:   100
