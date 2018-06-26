@@ -11,7 +11,7 @@ class Student(object):
         self.correct_ans_counter = 0
 
     def train(self):
-        print("Welcome to train mode, here you'll get feedback after each question..\nLets begin!(type exit in any time to stop training)")
+        print("Welcome to train mode, here you'll get feedback after each question..\nLets begin!(type exit in any time to stop training)\n")
         train_file = open_file("train_data", "train")
         suffle_q = train_file['questions']
         random.shuffle(suffle_q)
@@ -119,6 +119,3 @@ def open_file(file_name, flag):
             data = json.load(json_file, encoding='utf-8')
 
     return data
-
-amir = Student("Amir","203881818")
-amir.train()

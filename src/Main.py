@@ -13,8 +13,21 @@ if __name__ == '__main__':
     if user_type == "1":
         student_name = input("Please enter your name:\n")
         student_id = input("Enter ID:\n")
-        student = Student(student_name,student_id)
-        student.exam()
+        student = Student(student_name, student_id)
+        choice = None
+        while choice is None:
+            try:
+                choice = input("please choose one of the option:\n1. Practice questions.\n2. Start Exam.\n")
+                choice = int(choice)
+            except ValueError:
+                print("please enter the number of your choice from the range 1-2")
+                choice = None
+            if choice != None and choice not in range(1, 3):
+                choice = None
+        if choice == 1:
+            student.train()
+        else:
+            student.exam()
 
     elif user_type == "2":
         """
