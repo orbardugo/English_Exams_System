@@ -1,0 +1,6 @@
+26/06/2018 13:56:06
+Student name:   Moshe C
+Student ID: 1234567890
+question: 'כלב', Your answer: dog, Correct answer: dog  √
+question: 'I _____ to scholl yesterday', Your answer: went, Correct answer: went  √
+Your final grade:   100

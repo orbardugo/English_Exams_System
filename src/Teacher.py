@@ -54,7 +54,7 @@ class Teacher(object):
         student_IDs = []
         student_grades = []
         for file in files_list:
-            with open(file, "r") as f:
+            with open(file, "r", encoding='utf-8') as f:
                 for i, line in enumerate(f):
                     if i == 1:
                         student_names.append(fix_string(line))

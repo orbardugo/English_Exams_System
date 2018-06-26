@@ -1,0 +1,5 @@
+26/06/2018 13:53:19
+Student name:   Moshe C
+Student ID: 1234567890
+question: 'אריה', Your answer: l, Correct answer: lion  X
+Your final grade:   0

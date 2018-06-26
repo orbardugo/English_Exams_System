@@ -1,4 +1,4 @@
-26/06/2018 11:32:42
+26/06/2018 13:51:36
 Student name:   Or Bardugo
 Student ID: 302891551
 question: 'אריה', Your answer: lion, Correct answer: lion  √
