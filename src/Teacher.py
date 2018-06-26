@@ -1,5 +1,6 @@
 import codecs
 import json
+import xlwt
 
 
 class Teacher(object):
@@ -43,3 +44,11 @@ class Teacher(object):
         self.exam_data['questions'].append({'type': 2, 'q': q, 'a': [a1, a2, a3, a4]})
         self.train_data['questions'].append({'type': 2, 'q': q, 'a': [a1, a2, a3, a4]})
 
+    def create_exam_report(self,exam_name):
+        workbook = xlwt.Workbook()
+        worksheet = workbook.add_sheet('Statistics')
+        for x in range(0, 10):
+            for y in range(0, 10):
+                worksheet.write(x, y, x * y)
+
+        workbook.save("./checked_exams/"+exam_name+'.xls')

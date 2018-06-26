@@ -1,7 +1,6 @@
 import json
 import os
 import random
-
 import time
 
 
@@ -25,7 +24,7 @@ class Student(object):
             except FileNotFoundError:
                 choose = input("Wrong file name, please enter again the file name\n")
 
-        res_file = open(choose+"-"+self.name+".txt", "w+", encoding='utf-8')
+        res_file = open("./checked_exams/"+choose+"-"+self.name+".txt", "w+", encoding='utf-8')
         res_file.write("{}\nStudent name:   {}\nStudent ID: {}\n".format(time.strftime("%d/%m/%Y %H:%M:%S"), self.name, self.ident))
         for question in exam['questions']:
             q_type = question['type']
@@ -70,8 +69,3 @@ def open_file(file_name):
     with open("./Exams/"+file_name+".json", 'r', encoding="utf-8") as json_file:
         exam = json.load(json_file, encoding='utf-8')
     return exam
-
-
-
-Or = Student("Or Bardugo", "302891551")
-Or.exam()
