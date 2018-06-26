@@ -3,6 +3,7 @@ from Student import Student
 import os
 import getpass
 
+# User interface
 if __name__ == '__main__':
     print("Welcome to english exams system")
     user_type = input("Are you ?(please enter 1 or 2) \n1.Student\n2.Teacher\n")
@@ -30,13 +31,14 @@ if __name__ == '__main__':
             student.exam()
 
     elif user_type == "2":
-        """
+        # Add password (not working on pycharm! only cmd)
+        '''
         p = "null"  # user's input start value
         pas = "password"  # password value
         while p != pas:
             p = getpass.getpass("Insert your password: ")  # password input
         print("Password confirmed")  # when you get the password, the output is "ay"
-        """
+        '''
         teacher_name = input("Please enter your name:\n")
         choice = None
         while choice is None:
@@ -65,7 +67,5 @@ if __name__ == '__main__':
                 exam_name = input()
             teacher = Teacher(teacher_name, exam_name)
             teacher.create_exam_report(exam_name)
-
-
 
     print("Thank you, see you soon...")
